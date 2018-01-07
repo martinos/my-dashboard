@@ -263,7 +263,7 @@ soServer =
 getSOStars userID =
     get
         |> withPath ("/2.2/users/" ++ (userID |> toString) ++ "/favorites")
-        >> addQueries [ ( "order", "desc" ), ( "sort", "activity" ), ( "site", "stackoverflow" ) ]
+        >> addQueries [ ( "order", "desc" ), ( "sort", "activity" ), ( "site", "stackoverflow" ), ( "pagesize", "100" ) ]
         >> withJsonResp questionsDecoder
         >> soServer
         >> Cmd.map SetSOStars
