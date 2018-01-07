@@ -70,7 +70,7 @@ view model =
             [ div [ class "container" ]
                 [ div [ class "columns" ]
                     [ h1 [ class "title" ] [ text "Github" ] ]
-                , div [ class "columns is-mobile" ]
+                , div [ class "columns" ]
                     [ div [ class "column" ]
                         [ h1 [ class "subtitle" ] [ text "Repos" ]
                         , div [ class "field" ]
