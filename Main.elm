@@ -211,6 +211,7 @@ getRepos : Cmd Msg
 getRepos =
     get
         |> reposPath
+        >> addQuery ( "per_page", "100" )
         >> withJsonResp (JD.list repoDecoder)
         >> server
         >> Cmd.map SetRepos

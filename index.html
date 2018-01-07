@@ -13064,7 +13064,10 @@ var _user$project$Main$getRepos = function (_p6) {
 			A2(
 				_user$project$HttpHelpers$withJsonResp,
 				_elm_lang$core$Json_Decode$list(_user$project$Main$repoDecoder),
-				_user$project$Main$reposPath(_p6))));
+				A2(
+					_user$project$HttpHelpers$addQuery,
+					{ctor: '_Tuple2', _0: 'per_page', _1: '100'},
+					_user$project$Main$reposPath(_p6)))));
 }(_user$project$HttpHelpers$get);
 var _user$project$Main$main = _elm_lang$html$Html$program(
 	{
