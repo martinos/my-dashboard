@@ -73,7 +73,7 @@ view model =
                         , div [ class "field" ]
                             [ label [ class "label" ] [ text "Filter" ]
                             , div [ class "control" ]
-                                [ input [ type_ "text", class "input", onInput SetReposFilter ] [] ]
+                                [ input [ type_ "text", class "input", onInput SetReposFilter, attribute "autofocus" "" ] [] ]
                             ]
                         , model.repos |> RD.map (List.filter (filterRepo (model.repoInput))) |> RD.map viewRepos |> viewWebData
                         ]
