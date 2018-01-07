@@ -47,7 +47,19 @@ repos =
 
 
 main =
-    Html.program { init = ( model, Cmd.batch [ getRepos, getStars, getSOStars 89082 ] ), update = update, view = view, subscriptions = always Sub.none }
+    Html.program
+        { init =
+            ( model
+            , Cmd.batch
+                [ getRepos
+                , getStars
+                , getSOStars 89082
+                ]
+            )
+        , update = update
+        , view = view
+        , subscriptions = always Sub.none
+        }
 
 
 type Msg
@@ -88,38 +100,58 @@ view model =
         , section [ class "section" ]
             [ div [ class "container" ]
                 [ div [ class "columns" ]
-                    [ h1 [ class "title" ] [ text "Github" ] ]
-                , div [ class "columns" ]
-                    [ div [ class "column" ]
-                        [ h1 [ class "subtitle" ] [ text "Repos" ]
-                        , div [ class "field" ]
-                            [ label [ class "label" ] [ text "Filter" ]
-                            , div [ class "control" ]
-                                [ input [ type_ "text", class "input", onInput SetReposFilter, attribute "autofocus" "" ] [] ]
+                    [ div [ class "column is-two-thirds" ]
+                        [ div [ class "columns" ]
+                            [ div [ class "column" ] [ h1 [ class "title" ] [ text "Github" ] ] ]
+                        , div [ class "columns" ]
+                            [ reposColumns model
+                            , starsRepoColumns model
                             ]
-                        , model.repos |> RD.map (List.filter (filterRepo (model.repoInput))) |> RD.map viewRepos |> viewWebData
                         ]
                     , div [ class "column" ]
-                        [ h1 [ class "subtitle" ] [ text "Stars" ]
-                        , div [ class "field" ]
-                            [ label [ class "label" ] [ text "Filter" ]
-                            , div [ class "control" ]
-                                [ input [ type_ "text", class "input", onInput SetStarsFilter ] [] ]
-                            ]
-                        , model.stars |> RD.map (List.filter (filterRepo (model.starsInput))) |> RD.map viewRepos |> viewWebData
-                        ]
-                    , div [ class "column" ]
-                        [ h1 [ class "subtitle" ] [ text "StackOverFlowStars" ]
-                        , div [ class "field" ]
-                            [ label [ class "label" ] [ text "Filter" ]
-                            , div [ class "control" ]
-                                [ input [ type_ "text", class "input", onInput SetSOStarsFilter ] [] ]
-                            ]
-                        , model.soStars |> RD.map (List.filter (filterQuestion model.soStarsInput)) |> RD.map questionTable |> viewWebData
+                        [ div [ class "columns" ]
+                            [ div [ class "column" ] [ h1 [ class "title" ] [ text "StackOverflow" ] ] ]
+                        , div [ class "columns" ] [ stackOverFlowColumns model ]
                         ]
                     ]
                 ]
             ]
+        ]
+
+
+reposColumns model =
+    div [ class "column" ]
+        [ h1 [ class "subtitle" ] [ text "Repos" ]
+        , div [ class "field" ]
+            [ label [ class "label" ] [ text "Filter" ]
+            , div [ class "control" ]
+                [ input [ type_ "text", class "input", onInput SetReposFilter, attribute "autofocus" "" ] [] ]
+            ]
+        , model.repos |> RD.map (List.filter (filterRepo (model.repoInput))) |> RD.map viewRepos |> viewWebData
+        ]
+
+
+starsRepoColumns model =
+    div [ class "column" ]
+        [ h1 [ class "subtitle" ] [ text "Stars" ]
+        , div [ class "field" ]
+            [ label [ class "label" ] [ text "Filter" ]
+            , div [ class "control" ]
+                [ input [ type_ "text", class "input", onInput SetStarsFilter ] [] ]
+            ]
+        , model.stars |> RD.map (List.filter (filterRepo (model.starsInput))) |> RD.map viewRepos |> viewWebData
+        ]
+
+
+stackOverFlowColumns model =
+    div [ class "column" ]
+        [ h1 [ class "subtitle" ] [ text "Stars" ]
+        , div [ class "field" ]
+            [ label [ class "label" ] [ text "Filter" ]
+            , div [ class "control" ]
+                [ input [ type_ "text", class "input", onInput SetSOStarsFilter ] [] ]
+            ]
+        , model.soStars |> RD.map (List.filter (filterQuestion model.soStarsInput)) |> RD.map questionTable |> viewWebData
         ]
 
 

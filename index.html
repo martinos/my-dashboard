@@ -12532,11 +12532,294 @@ var _user$project$Main$Model = F6(
 var _user$project$Main$SetSOStarsFilter = function (a) {
 	return {ctor: 'SetSOStarsFilter', _0: a};
 };
+var _user$project$Main$stackOverFlowColumns = function (model) {
+	return A2(
+		_elm_lang$html$Html$div,
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html_Attributes$class('column'),
+			_1: {ctor: '[]'}
+		},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$h1,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$class('subtitle'),
+					_1: {ctor: '[]'}
+				},
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html$text('Stars'),
+					_1: {ctor: '[]'}
+				}),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$div,
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$class('field'),
+						_1: {ctor: '[]'}
+					},
+					{
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$label,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$class('label'),
+								_1: {ctor: '[]'}
+							},
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html$text('Filter'),
+								_1: {ctor: '[]'}
+							}),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$div,
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$class('control'),
+									_1: {ctor: '[]'}
+								},
+								{
+									ctor: '::',
+									_0: A2(
+										_elm_lang$html$Html$input,
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html_Attributes$type_('text'),
+											_1: {
+												ctor: '::',
+												_0: _elm_lang$html$Html_Attributes$class('input'),
+												_1: {
+													ctor: '::',
+													_0: _elm_lang$html$Html_Events$onInput(_user$project$Main$SetSOStarsFilter),
+													_1: {ctor: '[]'}
+												}
+											}
+										},
+										{ctor: '[]'}),
+									_1: {ctor: '[]'}
+								}),
+							_1: {ctor: '[]'}
+						}
+					}),
+				_1: {
+					ctor: '::',
+					_0: _user$project$ViewHelper$viewWebData(
+						A2(
+							_krisajenkins$remotedata$RemoteData$map,
+							_user$project$Main$questionTable,
+							A2(
+								_krisajenkins$remotedata$RemoteData$map,
+								_elm_lang$core$List$filter(
+									_user$project$Main$filterQuestion(model.soStarsInput)),
+								model.soStars))),
+					_1: {ctor: '[]'}
+				}
+			}
+		});
+};
 var _user$project$Main$SetStarsFilter = function (a) {
 	return {ctor: 'SetStarsFilter', _0: a};
 };
+var _user$project$Main$starsRepoColumns = function (model) {
+	return A2(
+		_elm_lang$html$Html$div,
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html_Attributes$class('column'),
+			_1: {ctor: '[]'}
+		},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$h1,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$class('subtitle'),
+					_1: {ctor: '[]'}
+				},
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html$text('Stars'),
+					_1: {ctor: '[]'}
+				}),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$div,
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$class('field'),
+						_1: {ctor: '[]'}
+					},
+					{
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$label,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$class('label'),
+								_1: {ctor: '[]'}
+							},
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html$text('Filter'),
+								_1: {ctor: '[]'}
+							}),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$div,
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$class('control'),
+									_1: {ctor: '[]'}
+								},
+								{
+									ctor: '::',
+									_0: A2(
+										_elm_lang$html$Html$input,
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html_Attributes$type_('text'),
+											_1: {
+												ctor: '::',
+												_0: _elm_lang$html$Html_Attributes$class('input'),
+												_1: {
+													ctor: '::',
+													_0: _elm_lang$html$Html_Events$onInput(_user$project$Main$SetStarsFilter),
+													_1: {ctor: '[]'}
+												}
+											}
+										},
+										{ctor: '[]'}),
+									_1: {ctor: '[]'}
+								}),
+							_1: {ctor: '[]'}
+						}
+					}),
+				_1: {
+					ctor: '::',
+					_0: _user$project$ViewHelper$viewWebData(
+						A2(
+							_krisajenkins$remotedata$RemoteData$map,
+							_user$project$Main$viewRepos,
+							A2(
+								_krisajenkins$remotedata$RemoteData$map,
+								_elm_lang$core$List$filter(
+									_user$project$Main$filterRepo(model.starsInput)),
+								model.stars))),
+					_1: {ctor: '[]'}
+				}
+			}
+		});
+};
 var _user$project$Main$SetReposFilter = function (a) {
 	return {ctor: 'SetReposFilter', _0: a};
+};
+var _user$project$Main$reposColumns = function (model) {
+	return A2(
+		_elm_lang$html$Html$div,
+		{
+			ctor: '::',
+			_0: _elm_lang$html$Html_Attributes$class('column'),
+			_1: {ctor: '[]'}
+		},
+		{
+			ctor: '::',
+			_0: A2(
+				_elm_lang$html$Html$h1,
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html_Attributes$class('subtitle'),
+					_1: {ctor: '[]'}
+				},
+				{
+					ctor: '::',
+					_0: _elm_lang$html$Html$text('Repos'),
+					_1: {ctor: '[]'}
+				}),
+			_1: {
+				ctor: '::',
+				_0: A2(
+					_elm_lang$html$Html$div,
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$class('field'),
+						_1: {ctor: '[]'}
+					},
+					{
+						ctor: '::',
+						_0: A2(
+							_elm_lang$html$Html$label,
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html_Attributes$class('label'),
+								_1: {ctor: '[]'}
+							},
+							{
+								ctor: '::',
+								_0: _elm_lang$html$Html$text('Filter'),
+								_1: {ctor: '[]'}
+							}),
+						_1: {
+							ctor: '::',
+							_0: A2(
+								_elm_lang$html$Html$div,
+								{
+									ctor: '::',
+									_0: _elm_lang$html$Html_Attributes$class('control'),
+									_1: {ctor: '[]'}
+								},
+								{
+									ctor: '::',
+									_0: A2(
+										_elm_lang$html$Html$input,
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html_Attributes$type_('text'),
+											_1: {
+												ctor: '::',
+												_0: _elm_lang$html$Html_Attributes$class('input'),
+												_1: {
+													ctor: '::',
+													_0: _elm_lang$html$Html_Events$onInput(_user$project$Main$SetReposFilter),
+													_1: {
+														ctor: '::',
+														_0: A2(_elm_lang$html$Html_Attributes$attribute, 'autofocus', ''),
+														_1: {ctor: '[]'}
+													}
+												}
+											}
+										},
+										{ctor: '[]'}),
+									_1: {ctor: '[]'}
+								}),
+							_1: {ctor: '[]'}
+						}
+					}),
+				_1: {
+					ctor: '::',
+					_0: _user$project$ViewHelper$viewWebData(
+						A2(
+							_krisajenkins$remotedata$RemoteData$map,
+							_user$project$Main$viewRepos,
+							A2(
+								_krisajenkins$remotedata$RemoteData$map,
+								_elm_lang$core$List$filter(
+									_user$project$Main$filterRepo(model.repoInput)),
+								model.repos))),
+					_1: {ctor: '[]'}
+				}
+			}
+		});
 };
 var _user$project$Main$view = function (model) {
 	return A2(
@@ -12575,29 +12858,70 @@ var _user$project$Main$view = function (model) {
 									{
 										ctor: '::',
 										_0: A2(
-											_elm_lang$html$Html$h1,
+											_elm_lang$html$Html$div,
 											{
 												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$class('title'),
+												_0: _elm_lang$html$Html_Attributes$class('column is-two-thirds'),
 												_1: {ctor: '[]'}
 											},
 											{
 												ctor: '::',
-												_0: _elm_lang$html$Html$text('Github'),
-												_1: {ctor: '[]'}
+												_0: A2(
+													_elm_lang$html$Html$div,
+													{
+														ctor: '::',
+														_0: _elm_lang$html$Html_Attributes$class('columns'),
+														_1: {ctor: '[]'}
+													},
+													{
+														ctor: '::',
+														_0: A2(
+															_elm_lang$html$Html$div,
+															{
+																ctor: '::',
+																_0: _elm_lang$html$Html_Attributes$class('column'),
+																_1: {ctor: '[]'}
+															},
+															{
+																ctor: '::',
+																_0: A2(
+																	_elm_lang$html$Html$h1,
+																	{
+																		ctor: '::',
+																		_0: _elm_lang$html$Html_Attributes$class('title'),
+																		_1: {ctor: '[]'}
+																	},
+																	{
+																		ctor: '::',
+																		_0: _elm_lang$html$Html$text('Github'),
+																		_1: {ctor: '[]'}
+																	}),
+																_1: {ctor: '[]'}
+															}),
+														_1: {ctor: '[]'}
+													}),
+												_1: {
+													ctor: '::',
+													_0: A2(
+														_elm_lang$html$Html$div,
+														{
+															ctor: '::',
+															_0: _elm_lang$html$Html_Attributes$class('columns'),
+															_1: {ctor: '[]'}
+														},
+														{
+															ctor: '::',
+															_0: _user$project$Main$reposColumns(model),
+															_1: {
+																ctor: '::',
+																_0: _user$project$Main$starsRepoColumns(model),
+																_1: {ctor: '[]'}
+															}
+														}),
+													_1: {ctor: '[]'}
+												}
 											}),
-										_1: {ctor: '[]'}
-									}),
-								_1: {
-									ctor: '::',
-									_0: A2(
-										_elm_lang$html$Html$div,
-										{
-											ctor: '::',
-											_0: _elm_lang$html$Html_Attributes$class('columns'),
-											_1: {ctor: '[]'}
-										},
-										{
+										_1: {
 											ctor: '::',
 											_0: A2(
 												_elm_lang$html$Html$div,
@@ -12609,15 +12933,37 @@ var _user$project$Main$view = function (model) {
 												{
 													ctor: '::',
 													_0: A2(
-														_elm_lang$html$Html$h1,
+														_elm_lang$html$Html$div,
 														{
 															ctor: '::',
-															_0: _elm_lang$html$Html_Attributes$class('subtitle'),
+															_0: _elm_lang$html$Html_Attributes$class('columns'),
 															_1: {ctor: '[]'}
 														},
 														{
 															ctor: '::',
-															_0: _elm_lang$html$Html$text('Repos'),
+															_0: A2(
+																_elm_lang$html$Html$div,
+																{
+																	ctor: '::',
+																	_0: _elm_lang$html$Html_Attributes$class('column'),
+																	_1: {ctor: '[]'}
+																},
+																{
+																	ctor: '::',
+																	_0: A2(
+																		_elm_lang$html$Html$h1,
+																		{
+																			ctor: '::',
+																			_0: _elm_lang$html$Html_Attributes$class('title'),
+																			_1: {ctor: '[]'}
+																		},
+																		{
+																			ctor: '::',
+																			_0: _elm_lang$html$Html$text('StackOverflow'),
+																			_1: {ctor: '[]'}
+																		}),
+																	_1: {ctor: '[]'}
+																}),
 															_1: {ctor: '[]'}
 														}),
 													_1: {
@@ -12626,266 +12972,21 @@ var _user$project$Main$view = function (model) {
 															_elm_lang$html$Html$div,
 															{
 																ctor: '::',
-																_0: _elm_lang$html$Html_Attributes$class('field'),
+																_0: _elm_lang$html$Html_Attributes$class('columns'),
 																_1: {ctor: '[]'}
 															},
 															{
 																ctor: '::',
-																_0: A2(
-																	_elm_lang$html$Html$label,
-																	{
-																		ctor: '::',
-																		_0: _elm_lang$html$Html_Attributes$class('label'),
-																		_1: {ctor: '[]'}
-																	},
-																	{
-																		ctor: '::',
-																		_0: _elm_lang$html$Html$text('Filter'),
-																		_1: {ctor: '[]'}
-																	}),
-																_1: {
-																	ctor: '::',
-																	_0: A2(
-																		_elm_lang$html$Html$div,
-																		{
-																			ctor: '::',
-																			_0: _elm_lang$html$Html_Attributes$class('control'),
-																			_1: {ctor: '[]'}
-																		},
-																		{
-																			ctor: '::',
-																			_0: A2(
-																				_elm_lang$html$Html$input,
-																				{
-																					ctor: '::',
-																					_0: _elm_lang$html$Html_Attributes$type_('text'),
-																					_1: {
-																						ctor: '::',
-																						_0: _elm_lang$html$Html_Attributes$class('input'),
-																						_1: {
-																							ctor: '::',
-																							_0: _elm_lang$html$Html_Events$onInput(_user$project$Main$SetReposFilter),
-																							_1: {
-																								ctor: '::',
-																								_0: A2(_elm_lang$html$Html_Attributes$attribute, 'autofocus', ''),
-																								_1: {ctor: '[]'}
-																							}
-																						}
-																					}
-																				},
-																				{ctor: '[]'}),
-																			_1: {ctor: '[]'}
-																		}),
-																	_1: {ctor: '[]'}
-																}
+																_0: _user$project$Main$stackOverFlowColumns(model),
+																_1: {ctor: '[]'}
 															}),
-														_1: {
-															ctor: '::',
-															_0: _user$project$ViewHelper$viewWebData(
-																A2(
-																	_krisajenkins$remotedata$RemoteData$map,
-																	_user$project$Main$viewRepos,
-																	A2(
-																		_krisajenkins$remotedata$RemoteData$map,
-																		_elm_lang$core$List$filter(
-																			_user$project$Main$filterRepo(model.repoInput)),
-																		model.repos))),
-															_1: {ctor: '[]'}
-														}
+														_1: {ctor: '[]'}
 													}
 												}),
-											_1: {
-												ctor: '::',
-												_0: A2(
-													_elm_lang$html$Html$div,
-													{
-														ctor: '::',
-														_0: _elm_lang$html$Html_Attributes$class('column'),
-														_1: {ctor: '[]'}
-													},
-													{
-														ctor: '::',
-														_0: A2(
-															_elm_lang$html$Html$h1,
-															{
-																ctor: '::',
-																_0: _elm_lang$html$Html_Attributes$class('subtitle'),
-																_1: {ctor: '[]'}
-															},
-															{
-																ctor: '::',
-																_0: _elm_lang$html$Html$text('Stars'),
-																_1: {ctor: '[]'}
-															}),
-														_1: {
-															ctor: '::',
-															_0: A2(
-																_elm_lang$html$Html$div,
-																{
-																	ctor: '::',
-																	_0: _elm_lang$html$Html_Attributes$class('field'),
-																	_1: {ctor: '[]'}
-																},
-																{
-																	ctor: '::',
-																	_0: A2(
-																		_elm_lang$html$Html$label,
-																		{
-																			ctor: '::',
-																			_0: _elm_lang$html$Html_Attributes$class('label'),
-																			_1: {ctor: '[]'}
-																		},
-																		{
-																			ctor: '::',
-																			_0: _elm_lang$html$Html$text('Filter'),
-																			_1: {ctor: '[]'}
-																		}),
-																	_1: {
-																		ctor: '::',
-																		_0: A2(
-																			_elm_lang$html$Html$div,
-																			{
-																				ctor: '::',
-																				_0: _elm_lang$html$Html_Attributes$class('control'),
-																				_1: {ctor: '[]'}
-																			},
-																			{
-																				ctor: '::',
-																				_0: A2(
-																					_elm_lang$html$Html$input,
-																					{
-																						ctor: '::',
-																						_0: _elm_lang$html$Html_Attributes$type_('text'),
-																						_1: {
-																							ctor: '::',
-																							_0: _elm_lang$html$Html_Attributes$class('input'),
-																							_1: {
-																								ctor: '::',
-																								_0: _elm_lang$html$Html_Events$onInput(_user$project$Main$SetStarsFilter),
-																								_1: {ctor: '[]'}
-																							}
-																						}
-																					},
-																					{ctor: '[]'}),
-																				_1: {ctor: '[]'}
-																			}),
-																		_1: {ctor: '[]'}
-																	}
-																}),
-															_1: {
-																ctor: '::',
-																_0: _user$project$ViewHelper$viewWebData(
-																	A2(
-																		_krisajenkins$remotedata$RemoteData$map,
-																		_user$project$Main$viewRepos,
-																		A2(
-																			_krisajenkins$remotedata$RemoteData$map,
-																			_elm_lang$core$List$filter(
-																				_user$project$Main$filterRepo(model.starsInput)),
-																			model.stars))),
-																_1: {ctor: '[]'}
-															}
-														}
-													}),
-												_1: {
-													ctor: '::',
-													_0: A2(
-														_elm_lang$html$Html$div,
-														{
-															ctor: '::',
-															_0: _elm_lang$html$Html_Attributes$class('column'),
-															_1: {ctor: '[]'}
-														},
-														{
-															ctor: '::',
-															_0: A2(
-																_elm_lang$html$Html$h1,
-																{
-																	ctor: '::',
-																	_0: _elm_lang$html$Html_Attributes$class('subtitle'),
-																	_1: {ctor: '[]'}
-																},
-																{
-																	ctor: '::',
-																	_0: _elm_lang$html$Html$text('StackOverFlowStars'),
-																	_1: {ctor: '[]'}
-																}),
-															_1: {
-																ctor: '::',
-																_0: A2(
-																	_elm_lang$html$Html$div,
-																	{
-																		ctor: '::',
-																		_0: _elm_lang$html$Html_Attributes$class('field'),
-																		_1: {ctor: '[]'}
-																	},
-																	{
-																		ctor: '::',
-																		_0: A2(
-																			_elm_lang$html$Html$label,
-																			{
-																				ctor: '::',
-																				_0: _elm_lang$html$Html_Attributes$class('label'),
-																				_1: {ctor: '[]'}
-																			},
-																			{
-																				ctor: '::',
-																				_0: _elm_lang$html$Html$text('Filter'),
-																				_1: {ctor: '[]'}
-																			}),
-																		_1: {
-																			ctor: '::',
-																			_0: A2(
-																				_elm_lang$html$Html$div,
-																				{
-																					ctor: '::',
-																					_0: _elm_lang$html$Html_Attributes$class('control'),
-																					_1: {ctor: '[]'}
-																				},
-																				{
-																					ctor: '::',
-																					_0: A2(
-																						_elm_lang$html$Html$input,
-																						{
-																							ctor: '::',
-																							_0: _elm_lang$html$Html_Attributes$type_('text'),
-																							_1: {
-																								ctor: '::',
-																								_0: _elm_lang$html$Html_Attributes$class('input'),
-																								_1: {
-																									ctor: '::',
-																									_0: _elm_lang$html$Html_Events$onInput(_user$project$Main$SetSOStarsFilter),
-																									_1: {ctor: '[]'}
-																								}
-																							}
-																						},
-																						{ctor: '[]'}),
-																					_1: {ctor: '[]'}
-																				}),
-																			_1: {ctor: '[]'}
-																		}
-																	}),
-																_1: {
-																	ctor: '::',
-																	_0: _user$project$ViewHelper$viewWebData(
-																		A2(
-																			_krisajenkins$remotedata$RemoteData$map,
-																			_user$project$Main$questionTable,
-																			A2(
-																				_krisajenkins$remotedata$RemoteData$map,
-																				_elm_lang$core$List$filter(
-																					_user$project$Main$filterQuestion(model.soStarsInput)),
-																				model.soStars))),
-																	_1: {ctor: '[]'}
-																}
-															}
-														}),
-													_1: {ctor: '[]'}
-												}
-											}
-										}),
-									_1: {ctor: '[]'}
-								}
+											_1: {ctor: '[]'}
+										}
+									}),
+								_1: {ctor: '[]'}
 							}),
 						_1: {ctor: '[]'}
 					}),
