@@ -38,7 +38,7 @@ type alias Model =
 
 model : Model
 model =
-    { repoInput = "", repos = NotAsked, starsInput = "", stars = NotAsked, soStarsInput = "", soStars = NotAsked }
+    { repoInput = "", repos = Loading, starsInput = "", stars = Loading, soStarsInput = "", soStars = Loading }
 
 
 repos : List Repo
