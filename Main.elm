@@ -66,17 +66,19 @@ view model =
         , section [ class "section" ]
             [ div [ class "container" ]
                 [ div [ class "columns" ]
+                    [ h1 [ class "title" ] [ text "Github" ] ]
+                , div [ class "columns" ]
                     [ div [ class "column" ]
-                        [ h1 [ class "title" ] [ text "Repos" ]
+                        [ h1 [ class "subtitle" ] [ text "Repos" ]
                         , div [ class "field" ]
                             [ label [ class "label" ] [ text "Filter" ]
                             , div [ class "control" ]
                                 [ input [ type_ "text", class "input", onInput SetReposFilter ] [] ]
                             ]
-                        , model.repos |> RD.map (List.filter (.name >> filter (model.repoInput))) |> RD.map viewRepos |> viewWebData
+                        , model.repos |> RD.map (List.filter (filterRepo (model.repoInput))) |> RD.map viewRepos |> viewWebData
                         ]
                     , div [ class "column" ]
-                        [ h1 [ class "title" ] [ text "Stars" ]
+                        [ h1 [ class "subtitle" ] [ text "Stars" ]
                         , div [ class "field" ]
                             [ label [ class "label" ] [ text "Filter" ]
                             , div [ class "control" ]
@@ -88,6 +90,10 @@ view model =
                 ]
             ]
         ]
+
+
+filterRepo str repo =
+    (repo.name |> filter str) || (repo.name |> filter str)
 
 
 viewRepos : List Repo -> Html msg

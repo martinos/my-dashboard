@@ -10232,6 +10232,10 @@ var _user$project$Main$viewRepos = function (repos) {
 			}
 		});
 };
+var _user$project$Main$filterRepo = F2(
+	function (str, repo) {
+		return A2(_user$project$Main$filter, str, repo.name) || A2(_user$project$Main$filter, str, repo.name);
+	});
 var _user$project$Main$update = F2(
 	function (msg, model) {
 		var _p2 = msg;
@@ -10343,104 +10347,29 @@ var _user$project$Main$view = function (model) {
 									{
 										ctor: '::',
 										_0: A2(
-											_elm_lang$html$Html$div,
+											_elm_lang$html$Html$h1,
 											{
 												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$class('column'),
+												_0: _elm_lang$html$Html_Attributes$class('title'),
 												_1: {ctor: '[]'}
 											},
 											{
 												ctor: '::',
-												_0: A2(
-													_elm_lang$html$Html$h1,
-													{
-														ctor: '::',
-														_0: _elm_lang$html$Html_Attributes$class('title'),
-														_1: {ctor: '[]'}
-													},
-													{
-														ctor: '::',
-														_0: _elm_lang$html$Html$text('Repos'),
-														_1: {ctor: '[]'}
-													}),
-												_1: {
-													ctor: '::',
-													_0: A2(
-														_elm_lang$html$Html$div,
-														{
-															ctor: '::',
-															_0: _elm_lang$html$Html_Attributes$class('field'),
-															_1: {ctor: '[]'}
-														},
-														{
-															ctor: '::',
-															_0: A2(
-																_elm_lang$html$Html$label,
-																{
-																	ctor: '::',
-																	_0: _elm_lang$html$Html_Attributes$class('label'),
-																	_1: {ctor: '[]'}
-																},
-																{
-																	ctor: '::',
-																	_0: _elm_lang$html$Html$text('Filter'),
-																	_1: {ctor: '[]'}
-																}),
-															_1: {
-																ctor: '::',
-																_0: A2(
-																	_elm_lang$html$Html$div,
-																	{
-																		ctor: '::',
-																		_0: _elm_lang$html$Html_Attributes$class('control'),
-																		_1: {ctor: '[]'}
-																	},
-																	{
-																		ctor: '::',
-																		_0: A2(
-																			_elm_lang$html$Html$input,
-																			{
-																				ctor: '::',
-																				_0: _elm_lang$html$Html_Attributes$type_('text'),
-																				_1: {
-																					ctor: '::',
-																					_0: _elm_lang$html$Html_Attributes$class('input'),
-																					_1: {
-																						ctor: '::',
-																						_0: _elm_lang$html$Html_Events$onInput(_user$project$Main$SetReposFilter),
-																						_1: {ctor: '[]'}
-																					}
-																				}
-																			},
-																			{ctor: '[]'}),
-																		_1: {ctor: '[]'}
-																	}),
-																_1: {ctor: '[]'}
-															}
-														}),
-													_1: {
-														ctor: '::',
-														_0: _user$project$ViewHelper$viewWebData(
-															A2(
-																_krisajenkins$remotedata$RemoteData$map,
-																_user$project$Main$viewRepos,
-																A2(
-																	_krisajenkins$remotedata$RemoteData$map,
-																	_elm_lang$core$List$filter(
-																		function (_p3) {
-																			return A2(
-																				_user$project$Main$filter,
-																				model.repoInput,
-																				function (_) {
-																					return _.name;
-																				}(_p3));
-																		}),
-																	model.repos))),
-														_1: {ctor: '[]'}
-													}
-												}
+												_0: _elm_lang$html$Html$text('Github'),
+												_1: {ctor: '[]'}
 											}),
-										_1: {
+										_1: {ctor: '[]'}
+									}),
+								_1: {
+									ctor: '::',
+									_0: A2(
+										_elm_lang$html$Html$div,
+										{
+											ctor: '::',
+											_0: _elm_lang$html$Html_Attributes$class('columns'),
+											_1: {ctor: '[]'}
+										},
+										{
 											ctor: '::',
 											_0: A2(
 												_elm_lang$html$Html$div,
@@ -10455,12 +10384,12 @@ var _user$project$Main$view = function (model) {
 														_elm_lang$html$Html$h1,
 														{
 															ctor: '::',
-															_0: _elm_lang$html$Html_Attributes$class('title'),
+															_0: _elm_lang$html$Html_Attributes$class('subtitle'),
 															_1: {ctor: '[]'}
 														},
 														{
 															ctor: '::',
-															_0: _elm_lang$html$Html$text('Stars'),
+															_0: _elm_lang$html$Html$text('Repos'),
 															_1: {ctor: '[]'}
 														}),
 													_1: {
@@ -10507,7 +10436,7 @@ var _user$project$Main$view = function (model) {
 																						_0: _elm_lang$html$Html_Attributes$class('input'),
 																						_1: {
 																							ctor: '::',
-																							_0: _elm_lang$html$Html_Events$onInput(_user$project$Main$SetStarsFilter),
+																							_0: _elm_lang$html$Html_Events$onInput(_user$project$Main$SetReposFilter),
 																							_1: {ctor: '[]'}
 																						}
 																					}
@@ -10527,23 +10456,117 @@ var _user$project$Main$view = function (model) {
 																	A2(
 																		_krisajenkins$remotedata$RemoteData$map,
 																		_elm_lang$core$List$filter(
-																			function (_p4) {
-																				return A2(
-																					_user$project$Main$filter,
-																					model.starsInput,
-																					function (_) {
-																						return _.name;
-																					}(_p4));
-																			}),
-																		model.stars))),
+																			_user$project$Main$filterRepo(model.repoInput)),
+																		model.repos))),
 															_1: {ctor: '[]'}
 														}
 													}
 												}),
-											_1: {ctor: '[]'}
-										}
-									}),
-								_1: {ctor: '[]'}
+											_1: {
+												ctor: '::',
+												_0: A2(
+													_elm_lang$html$Html$div,
+													{
+														ctor: '::',
+														_0: _elm_lang$html$Html_Attributes$class('column'),
+														_1: {ctor: '[]'}
+													},
+													{
+														ctor: '::',
+														_0: A2(
+															_elm_lang$html$Html$h1,
+															{
+																ctor: '::',
+																_0: _elm_lang$html$Html_Attributes$class('subtitle'),
+																_1: {ctor: '[]'}
+															},
+															{
+																ctor: '::',
+																_0: _elm_lang$html$Html$text('Stars'),
+																_1: {ctor: '[]'}
+															}),
+														_1: {
+															ctor: '::',
+															_0: A2(
+																_elm_lang$html$Html$div,
+																{
+																	ctor: '::',
+																	_0: _elm_lang$html$Html_Attributes$class('field'),
+																	_1: {ctor: '[]'}
+																},
+																{
+																	ctor: '::',
+																	_0: A2(
+																		_elm_lang$html$Html$label,
+																		{
+																			ctor: '::',
+																			_0: _elm_lang$html$Html_Attributes$class('label'),
+																			_1: {ctor: '[]'}
+																		},
+																		{
+																			ctor: '::',
+																			_0: _elm_lang$html$Html$text('Filter'),
+																			_1: {ctor: '[]'}
+																		}),
+																	_1: {
+																		ctor: '::',
+																		_0: A2(
+																			_elm_lang$html$Html$div,
+																			{
+																				ctor: '::',
+																				_0: _elm_lang$html$Html_Attributes$class('control'),
+																				_1: {ctor: '[]'}
+																			},
+																			{
+																				ctor: '::',
+																				_0: A2(
+																					_elm_lang$html$Html$input,
+																					{
+																						ctor: '::',
+																						_0: _elm_lang$html$Html_Attributes$type_('text'),
+																						_1: {
+																							ctor: '::',
+																							_0: _elm_lang$html$Html_Attributes$class('input'),
+																							_1: {
+																								ctor: '::',
+																								_0: _elm_lang$html$Html_Events$onInput(_user$project$Main$SetStarsFilter),
+																								_1: {ctor: '[]'}
+																							}
+																						}
+																					},
+																					{ctor: '[]'}),
+																				_1: {ctor: '[]'}
+																			}),
+																		_1: {ctor: '[]'}
+																	}
+																}),
+															_1: {
+																ctor: '::',
+																_0: _user$project$ViewHelper$viewWebData(
+																	A2(
+																		_krisajenkins$remotedata$RemoteData$map,
+																		_user$project$Main$viewRepos,
+																		A2(
+																			_krisajenkins$remotedata$RemoteData$map,
+																			_elm_lang$core$List$filter(
+																				function (_p3) {
+																					return A2(
+																						_user$project$Main$filter,
+																						model.starsInput,
+																						function (_) {
+																							return _.name;
+																						}(_p3));
+																				}),
+																			model.stars))),
+																_1: {ctor: '[]'}
+															}
+														}
+													}),
+												_1: {ctor: '[]'}
+											}
+										}),
+									_1: {ctor: '[]'}
+								}
 							}),
 						_1: {ctor: '[]'}
 					}),
@@ -10554,7 +10577,7 @@ var _user$project$Main$view = function (model) {
 var _user$project$Main$SetStars = function (a) {
 	return {ctor: 'SetStars', _0: a};
 };
-var _user$project$Main$getStars = function (_p5) {
+var _user$project$Main$getStars = function (_p4) {
 	return A2(
 		_elm_lang$core$Platform_Cmd$map,
 		_user$project$Main$SetStars,
@@ -10562,12 +10585,12 @@ var _user$project$Main$getStars = function (_p5) {
 			A2(
 				_user$project$HttpHelpers$withJsonResp,
 				_elm_lang$core$Json_Decode$list(_user$project$Main$repoDecoder),
-				_user$project$Main$starsPath(_p5))));
+				_user$project$Main$starsPath(_p4))));
 }(_user$project$HttpHelpers$get);
 var _user$project$Main$SetRepos = function (a) {
 	return {ctor: 'SetRepos', _0: a};
 };
-var _user$project$Main$getRepos = function (_p6) {
+var _user$project$Main$getRepos = function (_p5) {
 	return A2(
 		_elm_lang$core$Platform_Cmd$map,
 		_user$project$Main$SetRepos,
@@ -10575,7 +10598,7 @@ var _user$project$Main$getRepos = function (_p6) {
 			A2(
 				_user$project$HttpHelpers$withJsonResp,
 				_elm_lang$core$Json_Decode$list(_user$project$Main$repoDecoder),
-				_user$project$Main$reposPath(_p6))));
+				_user$project$Main$reposPath(_p5))));
 }(_user$project$HttpHelpers$get);
 var _user$project$Main$main = _elm_lang$html$Html$program(
 	{
