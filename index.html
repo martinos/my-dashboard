@@ -10285,7 +10285,30 @@ var _user$project$Main$repos = {
 	_1: {ctor: '[]'}
 };
 var _user$project$Main$model = {repoInput: '', repos: _krisajenkins$remotedata$RemoteData$NotAsked, starsInput: '', stars: _krisajenkins$remotedata$RemoteData$NotAsked};
-var _user$project$Main$bulma = _user$project$ViewHelper$css('https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css');
+var _user$project$Main$bulma = A2(
+	_elm_lang$html$Html$div,
+	{ctor: '[]'},
+	{
+		ctor: '::',
+		_0: A3(
+			_elm_lang$html$Html$node,
+			'meta',
+			{
+				ctor: '::',
+				_0: A2(_elm_lang$html$Html_Attributes$attribute, 'name', 'viewport'),
+				_1: {
+					ctor: '::',
+					_0: A2(_elm_lang$html$Html_Attributes$attribute, 'content', 'width=device-width, initial-scale=1'),
+					_1: {ctor: '[]'}
+				}
+			},
+			{ctor: '[]'}),
+		_1: {
+			ctor: '::',
+			_0: _user$project$ViewHelper$css('https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css'),
+			_1: {ctor: '[]'}
+		}
+	});
 var _user$project$Main$Repo = F4(
 	function (a, b, c, d) {
 		return {name: a, language: b, fork: c, url: d};
@@ -10366,7 +10389,7 @@ var _user$project$Main$view = function (model) {
 										_elm_lang$html$Html$div,
 										{
 											ctor: '::',
-											_0: _elm_lang$html$Html_Attributes$class('columns'),
+											_0: _elm_lang$html$Html_Attributes$class('columns is-mobile'),
 											_1: {ctor: '[]'}
 										},
 										{

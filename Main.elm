@@ -11,7 +11,10 @@ import Regex exposing (..)
 
 
 bulma =
-    css "https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css"
+    div []
+        [ node "meta" [ attribute "name" "viewport", attribute "content" "width=device-width, initial-scale=1" ] []
+        , css "https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css"
+        ]
 
 
 type alias Repo =
@@ -67,7 +70,7 @@ view model =
             [ div [ class "container" ]
                 [ div [ class "columns" ]
                     [ h1 [ class "title" ] [ text "Github" ] ]
-                , div [ class "columns" ]
+                , div [ class "columns is-mobile" ]
                     [ div [ class "column" ]
                         [ h1 [ class "subtitle" ] [ text "Repos" ]
                         , div [ class "field" ]
